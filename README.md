@@ -10,8 +10,6 @@ An Angular application that allows users to browse top-rated movies and TV shows
 - [Components](#components)
 - [Services](#services)
 - [Styling and Theming](#styling-and-theming)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
