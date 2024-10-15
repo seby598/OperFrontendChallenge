@@ -1,0 +1,24 @@
+<div class="search-bar">
+  <input
+    type="text"
+    [formControl]="searchControl"
+    placeholder="Search..."
+  />
+  <button *ngIf="searchControl.value" class="clear-btn" (click)="clearSearch()">✖</button>
+
+  <!-- Search results dropdown -->
+  <ul *ngIf="searchResults.length" class="search-results">
+    <li *ngFor="let result of searchResults">
+      <a
+        [routerLink]="[
+          '/details',
+          currentTab === 'movie' ? 'movie' : 'tv',
+          result.id
+        ]"
+        (click)="clearSearch()"
+      >
+        {{ result.title || result.name }}
+      </a>
+    </li>
+  </ul>
+</div>

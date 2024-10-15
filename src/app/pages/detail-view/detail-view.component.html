@@ -1,0 +1,12 @@
+<div class="detail-view" *ngIf="item">
+    <h1>{{ item.title || item.name }}</h1>
+    <p>{{ item.overview }}</p>
+    <p><strong>Release Date:</strong> {{ item.release_date || item.first_air_date }}</p>
+    <p><strong>Rating:</strong> {{ item.vote_average }}</p>
+    <img
+      *ngIf="item.poster_path"
+      [src]="'https://image.tmdb.org/t/p/w500' + item.poster_path"
+      alt="{{ item.title || item.name }}"
+    />
+  </div>
+  

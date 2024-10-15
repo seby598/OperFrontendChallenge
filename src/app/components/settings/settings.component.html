@@ -1,0 +1,26 @@
+<div class="settings-container">
+    <button class="settings-button" (click)="toggleTooltip()">
+      <i class="settings-icon"></i>
+    </button>
+    <div class="settings-tooltip" [class.visible]="tooltipVisible">
+      <label for="itemCount">Number of items to display (1-20):</label>
+      <input
+        id="itemCount"
+        type="number"
+        [formControl]="itemCountControl"
+        min="1"
+        max="20"
+        required
+      />
+      <div
+        *ngIf="
+          itemCountControl.invalid && (itemCountControl.dirty || itemCountControl.touched)
+        "
+      >
+        <small *ngIf="itemCountControl.errors?.['required']">This field is required.</small>
+        <small *ngIf="itemCountControl.errors?.['min']">Value must be at least 1.</small>
+        <small *ngIf="itemCountControl.errors?.['max']">Value cannot exceed 20.</small>
+      </div>
+    </div>
+  </div>
+  

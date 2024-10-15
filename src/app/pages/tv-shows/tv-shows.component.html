@@ -1,0 +1,14 @@
+<div class="container">
+  <h2 class="text-center mt-4">Top Rated TV Shows:</h2>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let show of topRatedTvShows">
+      <a [routerLink]="['/details', 'tv', show.id]" class="card-link">
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">{{ show.name }}</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

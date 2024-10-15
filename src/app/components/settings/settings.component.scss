@@ -1,0 +1,76 @@
+.settings-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+
+  .settings-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+
+    .settings-icon {
+      width: 24px;
+      height: 24px;
+      display: block;
+      background-image: url("../../../assets/settings.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .settings-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    width: 160px;
+    background-color: #fff;
+    color: #333;
+    text-align: left;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 1rem;
+    position: absolute;
+    z-index: 1001;
+    top: -50%;
+    right: 150%;
+    transform: translateY(-50%);
+    transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 75%;
+      left: 100%;
+      margin-top: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent transparent #ccc;
+    }
+
+    label,
+    input {
+      display: block;
+      width: 100%;
+    }
+
+    input {
+      margin-top: 0.5rem;
+      height: 26px;
+      width: 50px;
+    }
+
+    small {
+      color: red;
+    }
+
+    &.visible {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

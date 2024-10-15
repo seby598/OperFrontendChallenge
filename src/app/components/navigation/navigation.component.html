@@ -1,0 +1,25 @@
+<nav class="navigation">
+    <div class="navigation__left">
+      <ul class="navigation__list">
+        <li class="navigation__item">
+          <button class="navigation__button" routerLink="/movies" routerLinkActive="active">Movies</button>
+        </li>
+        <li class="navigation__item">
+          <button class="navigation__button" routerLink="/tv-shows" routerLinkActive="active">TV Shows</button>
+        </li>
+      </ul>
+    </div>
+    <div class="navigation__center">
+      <app-search-bar></app-search-bar>
+    </div>
+    <div class="navigation__right">
+      <div class="theme-dropdown">
+        <select [(ngModel)]="selectedTheme" (ngModelChange)="onThemeChange($event)">
+          <option *ngFor="let theme of availableThemes" [value]="theme">
+            {{ theme | titlecase }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </nav>
+  
